@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+body{
+    background: url(http://ww1.sinaimg.cn/large/005NYm0Bgy1fq7khcc21hj30zk0k0hdt.jpg) no-repeat center center;
+
+}
+.music{
+    max-width: 60rem;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(64, 64, 64, 0.7);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+}
+header{
+    background: #fff;
+    color: #999;
+    border-bottom:  1px solid #ddd;
+}
+header .topNavBar{
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon {
+   width: 2em; height: 2em;
+   vertical-align: -0.25em;
+   fill: #888;
+   overflow: hidden;
+}
+header .mask{
+    height: 6rem;
+    background: url(http://ww1.sinaimg.cn/large/005NYm0Bgy1fq7khcc21hj30zk0k0hdt.jpg) no-repeat center center;
+    color: rgb(46, 25, 25);
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+header  .mask> span{
+   margin-left: 3rem;
+}header  .mask> span:last-child{
+    font-size: .8rem;
+}
+section{
+    display: flex;
+    flex-direction: row;
+    height: 27rem;
+}
+aside{
+    width: 12rem;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    background: #FBD33E;
+} 
+aside >.songList{
+
+    flex-grow: 1;
+}
+aside >.songList ul{
+    overflow: auto;
+    max-height: 22rem;
+    position: relative;
+}
+aside ul>li{
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+aside ul>li.active{
+    background: rgb(248, 233, 145);
+}
+aside ul>li.active::before{
+    position: absolute;
+    content: '';
+    left: 0rem;
+    display: block;
+    top: .2rem;
+    width: .3rem;
+    height: 3rem;
+    background: #FBD33E;            
+}
+aside .upload{
+    border-top: 1px solid;
+    border: none;
+    padding: .5rem 2rem;
+    margin: .5rem;
+    background: rgb(248, 233, 145);
+}
+/*main*/
+main{
+    width: 48rem;
+    height: 100%;
+}
+main .page{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+main .hide{
+    display: none;
+}
+main .upload-page .container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+main .upload-page #uploadArea{
+    margin: 2rem 0;
+    top: 2rem;
+    width: 35rem;
+    height: 15rem;
+    border: 2px dashed #FBD33E;
+    border-radius: 1rem;
+}
+main .upload-page #upload-button {
+    width: 10rem;
+    padding: 1rem 2rem;
+    border-radius: .4rem;
+    background: #fff;border: 1px solid #FBD33E;
+    color: #FBD33E;
+}
+main .upload-page #upload-button:hover{
+    background: #FBD33E;
+    color: #fff;
+}
+
+main .edit-page .edit-container{
+    width: 25rem;
+    margin: 1rem;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: .5rem;
+    padding: 1rem  2rem;
+    background: #FAFAFA;
+}
+main .edit-container .row{
+    margin: 2rem;
+    display: flex;
+}
+main .edit-container .row label{
+display: flex;
+align-items: center;
+justify-content: flex-end;
+margin-right: .5rem;
+}
+main .edit-container input[type=text]{
+    padding: .5rem .3rem;
+    border-radius: 5px;
+    border : 1px solid rgb(221, 221, 221);
+    background: #fff;
+    height: 2rem;
+}
+main .edit-container input[type=button],
+main .edit-container input[type=submit],
+main .edit-container button{
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 5px;
+    background: #FAFAFA;
+}
