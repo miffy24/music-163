@@ -1,7 +1,7 @@
 # music player
     一个精美的音乐播放器（仿网易云音乐）
 ## 预览链接
-[电脑端页面](https://miffy24.github.io/music-163/index.html)
+[电脑端页面](https://miffy24.github.io/music-163/admin.html)
 
 ##  Todo：
     1. 电脑端管理页面（已完成）
