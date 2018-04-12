@@ -70,7 +70,7 @@ aside >.songList{
 }
 aside >.songList ul{
     overflow: auto;
-    max-height: 22rem;
+    max-height: 23rem;
     position: relative;
 }
 aside ul>li{
@@ -90,6 +90,11 @@ aside ul>li.active::before{
     height: 3rem;
     background: #FBD33E;            
 }
+aside #uploadArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 aside .upload{
     border-top: 1px solid;
     border: none;
@@ -106,34 +111,6 @@ main .page{
     height: 100%;
     display: flex;
     justify-content: center;
-}
-main .hide{
-    display: none;
-}
-main .upload-page .container{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-main .upload-page #uploadArea{
-    margin: 2rem 0;
-    top: 2rem;
-    width: 35rem;
-    height: 15rem;
-    border: 2px dashed #FBD33E;
-    border-radius: 1rem;
-}
-main .upload-page #upload-button {
-    width: 10rem;
-    padding: 1rem 2rem;
-    border-radius: .4rem;
-    margin: 2rem 0;
-    background: #fff;border: 1px solid #FBD33E;
-    color: #FBD33E;
-}
-main .upload-page #upload-button:hover{
-    background: #FBD33E;
-    color: #fff;
 }
 
 main .edit-page .edit-container{
