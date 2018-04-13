@@ -64,11 +64,11 @@ aside{
     flex-direction: column;
     background: #FBD33E;
 } 
-aside >.songList{
+aside >.songList-container{
 
     flex-grow: 1;
 }
-aside >.songList ul{
+aside >.songList-container ul{
     overflow: auto;
     max-height: 23rem;
     position: relative;
@@ -101,6 +101,7 @@ aside .upload{
     padding: .5rem 2rem;
     margin: .5rem;
     background: rgb(248, 233, 145);
+    cursor: pointer;
 }
 /*main*/
 main{
@@ -124,6 +125,9 @@ main .edit-page .edit-container{
 main .edit-container .row{
     margin: 2rem;
     display: flex;
+}
+main .edit-container .title{
+    font-size: 2rem;
 }
 main .edit-container .row label{
 display: flex;
