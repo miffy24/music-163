@@ -93,7 +93,6 @@
                     this.view.reset()
                     window.eventHubs.emit('create',JSON.parse(JSON.stringify(this.model.data)))
                 })
-                console.log(data)
         },
         bindEventHubs(){
             window.eventHubs.on('new',(data)=>{
