@@ -76,6 +76,7 @@ aside >.songList-container ul{
 aside ul>li{
     padding: 1rem;
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
 }
 aside ul>li.active{
     background: rgb(248, 233, 145);

@@ -60,6 +60,16 @@
             }, (error) =>{
             console.error(error);
             });
+        },
+        update(data){
+            var song = AV.Object.createWithoutData('Song', this.data.id)
+            song.set('name', data.name)
+            song.set('singer',data.singer)
+            song.set('url',data.url)
+            return song.save().then((response)=>{
+                Object.assign(this.data,data)
+                return response
+            })
         }
     }
     let controller = {
@@ -75,11 +85,10 @@
             this.view.$el.on('submit','form',(e)=>{
                 e.preventDefault() 
                 if(this.model.data.id){
-                    console.log(1)
+                    this.update()
                 }else{
                     this.create() 
                 }
-
             })
         },
         create(){
@@ -94,11 +103,25 @@
                     window.eventHubs.emit('create',JSON.parse(JSON.stringify(this.model.data)))
                 })
         },
+        update(){
+            let needs = ['name','url','singer'].splice('')
+            let data = {}
+            needs.map((string)=>{
+                data[string] = this.view.$el.find(`[name="${string}"]`).val()
+            })
+            this.model.update(data)
+                .then(()=>{
+                    window.eventHubs.emit('update',JSON.parse(JSON.stringify(this.model.data)))
+                })
+        },
         bindEventHubs(){
             window.eventHubs.on('new',(data)=>{
                 this.model.data = data
                 this.view.render(this.model.data)
-                
+            })
+            window.eventHubs.on('select',(data)=>{
+                this.model.data = data
+                this.view.render(this.model.data)
             })
         }
     }
