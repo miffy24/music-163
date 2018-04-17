@@ -34,11 +34,11 @@
                 html = html.replace(`__${string}__`,data[string]||'')
             });
             $(this.el).html(html)
-            // if(data.id){
-            //     $(this.el).prepend('<div class="row title">编辑歌曲</div>')
-            // }else{
-            //     $(this.el).prepend('<div class="row title">新建歌曲</div>')
-            // }
+            if(data.id){
+                $(this.el).prepend('<h2 class=" title">编辑歌曲</h2>')
+            }else{
+                $(this.el).prepend('<h2 class=" title">新建歌曲</h2>')
+            }
         },
         reset(){
             this.render({})
@@ -111,12 +111,18 @@
             })
             this.model.update(data)
                 .then(()=>{
+                    this.view.reset()
+                    alert('更新成功')
                     window.eventHubs.emit('update',JSON.parse(JSON.stringify(this.model.data)))
                 })
         },
         bindEventHubs(){
             window.eventHubs.on('new',(data)=>{
-                this.model.data = data
+                if(this.model.data.id){
+                    this.model.data = {}
+                }else{
+                    Object.assign(this.model.data,data)
+                }
                 this.view.render(this.model.data)
             })
             window.eventHubs.on('select',(data)=>{

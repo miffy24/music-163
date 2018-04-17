@@ -113,6 +113,8 @@ main .page{
     height: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 main .edit-page .edit-container{
@@ -128,7 +130,7 @@ main .edit-container .row{
     display: flex;
 }
 main .edit-container .title{
-    font-size: 2rem;
+    margin-left: -2rem;
 }
 main .edit-container .row label{
 display: flex;

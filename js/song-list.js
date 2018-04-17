@@ -7,10 +7,10 @@
         render(data){
             let $el = $(this.el)
             $el.html(this.template)
-            let {songs,selectedSongId}=data
+            let {songs,selectSongId}=data
             let liList = songs.map((song)=> {
                 let $li=$('<li></li>').text(song.name).attr('data-song-id',song.id)
-                if(song.id===selectedSongId){
+                if(song.id===selectSongId){
                     $li.addClass('active')
                 }
                 return $li
@@ -54,7 +54,7 @@
         }, 
         bindEvents(){
             $(this.view.el).on('click','li',(e)=>{
-                let songId = e.target.getAttribute('data-song-id')
+                let songId = e.currentTarget.getAttribute('data-song-id')
                 this.model.data.selectSongId = songId
                 this.view.render(this.model.data)
                 let data
