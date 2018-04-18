@@ -76,6 +76,7 @@ aside >.songList-container ul{
 aside ul>li{
     padding: 1rem;
     border-bottom: 1px solid #ddd;
+    position: relative;
     cursor: pointer;
 }
 aside ul>li.active{
@@ -88,7 +89,7 @@ aside ul>li.active::before{
     display: block;
     top: .2rem;
     width: .3rem;
-    height: 3rem;
+    height: 90%;
     background: #FBD33E;            
 }
 aside #uploadArea {
